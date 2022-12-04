@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 const BuyOrderCard = ({buyOrder})=>{
+
+    const navigate = useNavigate();
+
+    const handleBuyOrderCardClick =() =>{
+        navigate(`/buyOrderDetails/${buyOrder.id}`)
+    }
     return (
-        <div className="root_buyOrderCard">
+        <div className="root_buyOrderCard" onClick={handleBuyOrderCardClick}>
             <div>
                 <div className="lbl_buyOrderCard">Order Name</div>
                 <div className="val_buyOrderCard">{buyOrder.name}</div>

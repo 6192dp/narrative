@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { fetchRequest } from "../../api";
 import { GET_COUNTRIES_URL } from "../../utils/constants";
 import './styles.css';
 
-const CountrySelection = ({selectedCountries, updateSelectedCountries}) => {
-    const [countries, updateCountries] = useState([]);
-    
+const CountrySelection = ({ selectedCountries, updateSelectedCountries, updateCountries, countries }) => {
 
     useEffect(() => {
         fetchCountries();
@@ -13,7 +12,6 @@ const CountrySelection = ({selectedCountries, updateSelectedCountries}) => {
 
     const fetchCountries = async () => {
         const response = await fetchRequest(GET_COUNTRIES_URL);
-        console.log(response);
         if (response?.length) {
             updateCountries(response);
         }
@@ -33,7 +31,11 @@ const CountrySelection = ({selectedCountries, updateSelectedCountries}) => {
         return selectedCountries.includes(country['countryCode']);
     }
 
-    if (countries?.length) {
+    let location = useLocation();
+    console.log(location);
+
+
+    if (countries?.length && !location.pathname.includes('buyOrderDetails')) {
         return (
             <div className="root_countrySelection">
                 <div className="hdr_countrySelection">Included countries:</div>

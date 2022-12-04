@@ -7,15 +7,17 @@ import BuyOrderDetails from "./routes/BuyOrderDetails";
 
 function App() {
   const [selectedCountries, updateSelectedCountries] = useState([]);
+  const [countries, updateCountries] = useState([]);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<BuyOrders selectedCountries={selectedCountries} />} />
         <Route exact path="/datasets" element={<DataSets selectedCountries={selectedCountries} />} />
-        <Route exact path="/buy-order-details" element={<BuyOrderDetails />} />
+        <Route exact path="/buyOrderDetails/:orderId" element={<BuyOrderDetails countries={countries}/>} />
       </Routes>
-      <CountrySelection selectedCountries={selectedCountries} updateSelectedCountries={updateSelectedCountries} />
+      <CountrySelection selectedCountries={selectedCountries} updateSelectedCountries={updateSelectedCountries}
+        countries={countries} updateCountries={updateCountries} />
     </BrowserRouter>
   )
 }
