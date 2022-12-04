@@ -32,7 +32,6 @@ const BuyOrderDetails = ({ countries, dataSets, updateDataSets }) => {
     }
 
     const handleSaveOrder = async (data) => {
-        console.log('data', data);
         const response = await axiosRequest({ url: `${BUY_ORDERS_URL}/${orderId}`, method: 'PUT', data });
         if (response) {
             navigate('/', { replace: true })

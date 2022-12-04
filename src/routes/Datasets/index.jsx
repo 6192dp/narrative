@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import { GET_DATASETS_URL } from '../../utils/constants';
 import DatasetList from './components/DatasetList';
 
-const DataSets = ({ selectedCountries, dataSets, updateDataSets }) => {
+const DataSets = ({ selectedCountries, dataSets, updateDataSets, countries }) => {
 
     useEffect(() => {
         fetchDataSets();
@@ -20,7 +20,7 @@ const DataSets = ({ selectedCountries, dataSets, updateDataSets }) => {
     return (
         <div>
             <Header />
-            <DatasetList dataSets={dataSets} selectedCountries={selectedCountries} />
+            <DatasetList dataSets={dataSets} selectedCountries={selectedCountries} countries={countries} />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 
-const DatasetCard = ({ dataSet }) => {
+const DatasetCard = ({ dataSet, counts }) => {
 
     return (
         <div className="root_datasetCard">
@@ -15,7 +15,7 @@ const DatasetCard = ({ dataSet }) => {
             </div>
             <div className="root_row">
                 <div className="lbl_datasetCard">Available records:</div>
-                <div className="val_datasetCard">44 records</div>
+                <div className="val_datasetCard">{counts[dataSet.id]} records</div>
             </div>
             <div>
                 <div className="lbl_datasetCard">Included countries:</div>
@@ -23,6 +23,8 @@ const DatasetCard = ({ dataSet }) => {
             </div>
         </div>
     )
+
 }
+
 
 export default DatasetCard;
