@@ -1,35 +1,72 @@
+import { useState } from 'react';
+import { formatDate, getInputValueFromId } from '../../../utils/helpers';
 import '../styles.css'
 import CountryList from './CountryList';
-import DatasetCards from './DatasetDetail';
+import DatasetDetail from './DatasetDetail';
 
-const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, dataSets }) => {
+const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, dataSets, handleSaveOrder }) => {
+    const [isEdit, updateIsEdit] = useState(false);
+    const [editDataSetIds, updateEditDataSetIds] = useState([]);
+    const [editCountryIds, updateCountryIds] = useState([]);
+
+    const handleEditOrderClick = () => {
+        updateIsEdit(true);
+    }
+
+    const handleCancelClick = () => {
+        updateIsEdit(false);
+        updateEditDataSetIds([]);
+        updateCountryIds([]);
+    }
+
+    const handleSaveOrderClick = () => {
+        const name = getInputValueFromId('name');
+        const budget = Number.parseFloat(getInputValueFromId('budget'));
+        const data = { name, createdAt: new Date(), budget, datasetIds: editDataSetIds, countries: editCountryIds };
+        if (name === '') {
+            alert('Order Name cannot be empty');
+        } else if (budget === '' || isNaN(budget)) {
+            alert('Order budget cannot be empty');
+        }
+        else if (editDataSetIds.length === 0) {
+            alert('Select atleast one dataset');
+        } else if (editCountryIds.length === 0) {
+            alert('Select atleast country dataset');
+        }
+        else {
+            handleSaveOrder(data);
+        }
+
+    }
+
     return (
         <div className='root_buyOrderDetailsCard'>
-            <div className='hdr_buyOrderList'>Buy Order Details</div>
+            <div className='hdr_buyOrderList'> {isEdit ? 'Edit Buy Order ' : 'Buy Order Details'}</div>
             {buyOrder ?
                 <div className="root_form">
                     <div className="root_flex">
                         <div className="root_order">
                             <div className='lbl_buyOrderCard'>Order Name</div>
-                            <div>{buyOrder.name}</div>
+                            {isEdit ? <input type="text" defaultValue={buyOrder.name} id="name" /> : <div>{buyOrder.name}</div>}
                         </div>
                         <div className="root_date">
                             <div className='lbl_buyOrderCard'>Date Created</div>
-                            <div>{buyOrder.createdAt}</div>
+                            <div>{formatDate(buyOrder.createdAt)}</div>
                         </div>
                     </div>
                     <br />
 
                     <div className="root_date">
                         <div className='lbl_buyOrderCard'>Order budget</div>
-                        <div>${buyOrder.budget}</div>
+                        {isEdit ? <input type="text" defaultValue={buyOrder.budget} id="budget" /> : <div>${buyOrder.budget}</div>}
                     </div>
                     <br />
 
                     <div className="root_date">
                         <div className='lbl_buyOrderCard'>Included datasets</div>
                         <div className='root_dataSetList'>
-                            <DatasetCards dataSets={dataSets} datasetIds={buyOrder.datasetIds} />
+                            <DatasetDetail dataSets={dataSets} datasetIds={buyOrder.datasetIds}
+                                updateEditDataSetIds={updateEditDataSetIds} isEdit={isEdit} editDataSetIds={editDataSetIds} />
                         </div>
                     </div>
                     <br />
@@ -37,17 +74,25 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, data
                     <div className="root_date">
                         <div className='lbl_buyOrderCard'>Included countries</div>
                         <div className='root_countryList'>
-                            <CountryList countries={countries} countryCodeList={buyOrder.countries} />
+                            <CountryList countries={countries} countryCodeList={buyOrder.countries}
+                                editCountryIds={editCountryIds} updateCountryIds={updateCountryIds} isEdit={isEdit} />
                         </div>
                     </div>
                     <br />
                     <br />
+                    {isEdit ?
+                        <div className='root_buttons'>
+                            <button onClick={handleSaveOrderClick}>Save Order</button>
+                            <button onClick={handleCancelClick}>Cancel</button>
 
-                    <div className='root_buttons'>
-                        <button>Edit Order</button>
-                        <button onClick={handleDeleteOrderClick}>Delete Order</button>
+                        </div>
+                        : <div className='root_buttons'>
+                            <button onClick={handleEditOrderClick}>Edit Order</button>
+                            <button onClick={handleDeleteOrderClick}>Delete Order</button>
 
-                    </div>
+                        </div>
+                    }
+
                 </div>
 
                 : <div />}

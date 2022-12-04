@@ -16,31 +16,44 @@
     display: flex;
     flex-wrap: wrap;
 }
-.root_dataSetList{
+
+.root_dataSetList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.tile_country {
-    border: 1px solid;
+.countryTile,
+.countryTileSelected {
+    background-color: #ddd;
+    border: 1px solid #ccc;
     border-radius: 1rem;
     padding: 0.125rem 0.25rem;
     font-size: 0.625rem;
     margin-right: 0.5rem;
 }
+.countryTileSelected{
+    border: 1px solid #333;
+    background-color: #eee;
+}
 
-.root_datasetDetail {
+.root_datasetDetail,
+.root_datasetDetailSelect {
     display: flex;
-    background-color: white;
+    background-color: #ddd;
     padding: 0.5rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     width: 42%;
-
 }
 
-.root_datasetDetail img {
+.root_datasetDetailSelect {
+    border: 2px solid #333;
+    background-color: #eee;
+}
+
+.root_datasetDetail img,
+.root_datasetDetailSelect img {
     height: 2rem;
     width: 2rem;
     margin-right: 1rem;
@@ -60,7 +73,7 @@
     justify-content: end;
 }
 
-.root_buttons button{
+.root_buttons button {
     width: 6rem;
     margin-left: 0.5rem;
     font-weight: bold;

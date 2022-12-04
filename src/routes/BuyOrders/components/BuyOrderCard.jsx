@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../../utils/helpers";
 
 const BuyOrderCard = ({buyOrder})=>{
 
@@ -15,7 +16,7 @@ const BuyOrderCard = ({buyOrder})=>{
             </div>
             <div>
                 <div className="lbl_buyOrderCard">Date Created</div>
-                <div className="val_buyOrderCard">{buyOrder.createdAt}</div>
+                <div className="val_buyOrderCard">{formatDate(buyOrder.createdAt)}</div>
             </div>
             <div>
                 <div className="lbl_buyOrderCard">Budget</div>

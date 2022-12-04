@@ -31,6 +31,15 @@ const BuyOrderDetails = ({ countries, dataSets, updateDataSets }) => {
         }
     }
 
+    const handleSaveOrder = async (data) => {
+        console.log('data', data);
+        const response = await axiosRequest({ url: `${BUY_ORDERS_URL}/${orderId}`, method: 'PUT', data });
+        if (response) {
+            navigate('/', { replace: true })
+        }
+
+    }
+
     const handleDeleteOrderClick = async () => {
         const response = await axiosRequest({ url: `${BUY_ORDERS_URL}/${orderId}`, method: 'DELETE' });
         navigate('/', { replace: true })
@@ -39,7 +48,8 @@ const BuyOrderDetails = ({ countries, dataSets, updateDataSets }) => {
     return (
         <div>
             <Header />
-            <BuyOrderDetailsCard buyOrder={buyOrder} countries={countries} handleDeleteOrderClick={handleDeleteOrderClick} dataSets={dataSets} />
+            <BuyOrderDetailsCard buyOrder={buyOrder} countries={countries} handleDeleteOrderClick={handleDeleteOrderClick}
+                dataSets={dataSets} handleSaveOrder={handleSaveOrder} />
         </div>
     )
 }
