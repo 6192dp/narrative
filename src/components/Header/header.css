@@ -1,10 +1,13 @@
 .hdr_root{
     display: flex;
     background-color: red;
+    position: fixed;
+    width: 100%;
 }
 
 .hdr_item{
+    font-weight: bold;
     font-size: 1rem;
     color: white;
-    padding: 1rem;
+    padding: 1.25rem;
 }

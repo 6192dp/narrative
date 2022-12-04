@@ -1,14 +1,16 @@
 import BuyOrderCard from "./BuyOrderCard";
 import '../styles.css';
 
-const BuyOrderList = ({ buyOrders }) => {
+const BuyOrderList = ({ buyOrders, selectedCountries }) => {
     if (buyOrders?.length) {
         return <>
             <div className="hdr_buyOrderList">Your Buy Orders</div>
             <div className="count_buyOrderList">Showing <b>{buyOrders.length}</b> results</div>
-            {buyOrders.map(buyOrder => {
-                return <BuyOrderCard key={buyOrder.id} buyOrder={buyOrder} />
-            })}
+            <div className="">
+                {buyOrders.map(buyOrder => {
+                    return <BuyOrderCard key={buyOrder.id} buyOrder={buyOrder} />
+                })}
+            </div>
         </>
     }
 

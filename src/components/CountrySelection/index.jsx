@@ -35,8 +35,8 @@ const CountrySelection = ({selectedCountries, updateSelectedCountries}) => {
 
     if (countries?.length) {
         return (
-            <div>
-                <div>Included countries:</div>
+            <div className="root_countrySelection">
+                <div className="hdr_countrySelection">Included countries:</div>
                 <div className="countriesList">
                     {countries.map(i => {
 

@@ -5,3 +5,19 @@
     background-color: aqua;
     border: 1px solid #777;
 }
+.root_countrySelection{
+    border: 2px solid #999;
+    width: 50%;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    z-index: 2;
+    background-color: yellow;
+}
+.hdr_countrySelection{
+    text-decoration: underline;
+    color: red;
+    margin-bottom: 0.25rem;
+}
