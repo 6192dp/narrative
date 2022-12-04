@@ -32,8 +32,6 @@ const CountrySelection = ({ selectedCountries, updateSelectedCountries, updateCo
     }
 
     let location = useLocation();
-    console.log(location);
-
 
     if (countries?.length && !location.pathname.includes('buyOrderDetails')) {
         return (

@@ -1,7 +1,7 @@
 .root_form {
     background-color: lightgray;
     padding: 1rem 2rem;
-    width: 50%;
+    width: 60%;
     left: 50%;
     transform: translate(-50%, 0);
     position: relative;
@@ -14,11 +14,51 @@
 
 .root_countryList {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.tile_country{
-    border: 1px solid ;
+
+.tile_country {
+    border: 1px solid;
     border-radius: 1rem;
     padding: 0.125rem 0.25rem;
     font-size: 0.625rem;
     margin-right: 0.5rem;
+}
+
+.root_datasetDetail {
+    display: flex;
+    background-color: white;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 42%;
+
+}
+
+.root_datasetDetail img {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+.lbl_datasetDetail {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.val_datasetDetail {
+    font-size: 0.75rem;
+}
+
+.root_buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.root_buttons button{
+    width: 6rem;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    padding: 0.4rem 0;
 }

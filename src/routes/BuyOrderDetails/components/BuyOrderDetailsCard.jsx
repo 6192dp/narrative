@@ -1,7 +1,8 @@
 import '../styles.css'
 import CountryList from './CountryList';
+import DatasetCards from './DatasetDetail';
 
-const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick }) => {
+const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, dataSets }) => {
     return (
         <div className='root_buyOrderDetailsCard'>
             <div className='hdr_buyOrderList'>Buy Order Details</div>
@@ -27,7 +28,9 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick }) =>
 
                     <div className="root_date">
                         <div className='lbl_buyOrderCard'>Included datasets</div>
-                        <div>Datasetcard</div>
+                        <div className='root_countryList'>
+                            <DatasetCards dataSets={dataSets} datasetIds={buyOrder.datasetIds} />
+                        </div>
                     </div>
                     <br />
 

@@ -4,8 +4,7 @@ import Header from '../../components/Header/Header';
 import { GET_DATASETS_URL } from '../../utils/constants';
 import DatasetList from './components/DatasetList';
 
-const DataSets = ({ selectedCountries }) => {
-    const [dataSets, updateDataSets] = useState([]);
+const DataSets = ({ selectedCountries, dataSets, updateDataSets }) => {
 
     useEffect(() => {
         fetchDataSets();
@@ -13,7 +12,6 @@ const DataSets = ({ selectedCountries }) => {
 
     const fetchDataSets = async () => {
         const response = await fetchRequest(GET_DATASETS_URL);
-        console.log(response);
         if (response?.length) {
             updateDataSets(response);
         }
