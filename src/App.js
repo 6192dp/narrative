@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CountrySelection from "./components/CountrySelection";
 import BuyOrders from "./routes/BuyOrders";
 import DataSets from "./routes/Datasets";
-import EditBuyOrder from "./routes/EditBuyOrder";
+import EditBuyOrder from "./routes/BuyOrderDetails";
 
 function App() {
   const [selectedCountries, updateSelectedCountries] = useState([]);

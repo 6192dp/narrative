@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchRequest } from '../../api';
 import Header from '../../components/Header/Header';
 import { GET_BUY_ORDERS_URL } from '../../utils/constants';
+import BuyOrderList from './components/BuyOrderList';
 
 const BuyOrders = ({selectedCountries}) => {
     const [buyOrders, updateBuyOrders] = useState([]);
@@ -21,7 +22,7 @@ const BuyOrders = ({selectedCountries}) => {
     return (
         <div>
             <Header/>
-            Buy Orders
+            <BuyOrderList buyOrders={buyOrders} />
         </div>
     )
 }

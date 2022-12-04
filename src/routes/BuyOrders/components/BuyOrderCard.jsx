@@ -1,18 +1,20 @@
-const BuyOrderCard = ()=>{
+const BuyOrderCard = ({buyOrder})=>{
     return (
-        <div>
+        <div className="root_buyOrderCard">
             <div>
-                <div>Order Name</div>
-                <div>My Order Order</div>
+                <div className="lbl_buyOrderCard">Order Name</div>
+                <div className="val_buyOrderCard">{buyOrder.name}</div>
             </div>
             <div>
-                <div>Date Created</div>
-                <div>12/12/12</div>
+                <div className="lbl_buyOrderCard">Date Created</div>
+                <div className="val_buyOrderCard">{buyOrder.createdAt}</div>
             </div>
             <div>
-                <div>Budget</div>
-                <div>$100.00</div>
+                <div className="lbl_buyOrderCard">Budget</div>
+                <div className="val_buyOrderCard">${buyOrder.budget}</div>
             </div>
         </div>
     )
 }
+
+export default BuyOrderCard;

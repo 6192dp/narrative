@@ -1,0 +1,46 @@
+.root_dataList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.root_datasetCard {
+    background-color: lightgray;
+    margin: 1rem;
+    padding: 1rem;
+    width: 33%;
+}
+
+.root_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lbl_datasetCard {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: red;
+    margin-bottom: 0.5rem;
+}
+
+.val_datasetCard {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.img_datasetCard {
+    height: 3rem;
+    width: 3rem;
+}
+
+.hdr_datasetCard {
+    width: 66%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.25rem;
+}
+
+.root_header {
+    display: flex;
+    margin-bottom: 1rem;
+}

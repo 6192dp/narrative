@@ -1,24 +1,25 @@
-const DatasetCard = () => {
+
+const DatasetCard = ({ dataSet }) => {
 
     return (
-        <div>
-            <div>
-                <img src='' />
-                <div>Fishing Zones</div>
+        <div className="root_datasetCard">
+            <div className="root_header">
+                <img className="img_datasetCard" src={dataSet.thumbnailUrl} alt="Dataset thumbnail" />
+                <div className="hdr_datasetCard">{dataSet.label}</div>
             </div>
-            <div>Dataset Description</div>
-            <div>Lorem ipsum</div>
-            <div>
-                <div>Cost per record:</div>
-                <div>#0.03</div>
+            <div className="lbl_datasetCard">Dataset Description</div>
+            <div className="val_datasetCard">{dataSet.description}</div>
+            <div className="root_row">
+                <div className="lbl_datasetCard">Cost per record:</div>
+                <div className="val_datasetCard">${dataSet.costPerRecord}</div>
+            </div>
+            <div className="root_row">
+                <div className="lbl_datasetCard">Available records:</div>
+                <div className="val_datasetCard">44 records</div>
             </div>
             <div>
-                <div>Available records:</div>
-                <div>4500 records</div>
-            </div>
-            <div>
-                <div>Included countries:</div>
-                <div>4500 records</div>
+                <div className="lbl_datasetCard">Included countries:</div>
+                <div className="val_datasetCard">4500 records</div>
             </div>
         </div>
     )

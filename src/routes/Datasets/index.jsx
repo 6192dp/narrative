@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchRequest } from '../../api';
 import Header from '../../components/Header/Header';
 import { GET_DATASETS_URL } from '../../utils/constants';
+import DatasetList from './components/DatasetList';
 
 const DataSets = ({ selectedCountries }) => {
     const [dataSets, updateDataSets] = useState([]);
@@ -21,7 +22,7 @@ const DataSets = ({ selectedCountries }) => {
     return (
         <div>
             <Header />
-            DataSets
+            <DatasetList dataSets={dataSets} />
         </div>
     )
 }

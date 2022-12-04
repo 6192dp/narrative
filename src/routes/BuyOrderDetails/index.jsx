@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 
-const EditBuyOrder = () => {
+const BuyOrderDetails = () => {
     return (
         <div>
             <Header/>
-            EditBuyOrder
+            BuyOrderDetails
         </div>
     )
 }
 
-export default EditBuyOrder;
+export default BuyOrderDetails;
