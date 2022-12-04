@@ -1,9 +1,20 @@
 .countriesList{
     display: flex;
 }
+.unSelectedCountry,
 .selectedCountry{
-    background-color: aqua;
-    border: 1px solid #777;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    margin-top: 1rem;
+    margin-right: 0.25rem;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+.selectedCountry{
+    background-color: #fff;
+    border: 2px solid #777;
+  
 }
 .root_countrySelection{
     border: 2px solid #999;
@@ -14,10 +25,11 @@
     transform: translate(-50%, 0);
     padding: 1rem;
     z-index: 2;
-    background-color: yellow;
+    background-color: #ccc;
 }
 .hdr_countrySelection{
     text-decoration: underline;
-    color: red;
+    color: #777;
     margin-bottom: 0.25rem;
+    text-underline-offset: 0.25rem;
 }

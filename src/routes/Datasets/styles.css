@@ -18,10 +18,11 @@
 }
 
 .lbl_datasetCard {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-decoration: underline;
-    color: red;
+    color: #777;
     margin-bottom: 0.5rem;
+    text-underline-offset: 0.25rem;
 }
 
 .val_datasetCard {

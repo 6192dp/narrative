@@ -28,7 +28,7 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, data
 
                     <div className="root_date">
                         <div className='lbl_buyOrderCard'>Included datasets</div>
-                        <div className='root_countryList'>
+                        <div className='root_dataSetList'>
                             <DatasetCards dataSets={dataSets} datasetIds={buyOrder.datasetIds} />
                         </div>
                     </div>

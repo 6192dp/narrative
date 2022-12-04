@@ -8,8 +8,10 @@
 .lbl_buyOrderCard{
     font-size: 1rem;
     text-decoration: underline;
-    color: red;
+    text-underline-offset: 0.25rem;
+    color: #777;
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 .hdr_buyOrderList{
     text-align: center;
@@ -20,4 +22,8 @@
 .count_buyOrderList{
     margin: 0 0 -0.5rem 4rem;
     font-size: 0.8rem;
+    color: #666;
+}
+b{
+    color: #000
 }
