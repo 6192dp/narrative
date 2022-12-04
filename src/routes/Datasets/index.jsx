@@ -22,7 +22,7 @@ const DataSets = ({ selectedCountries }) => {
     return (
         <div>
             <Header />
-            <DatasetList dataSets={dataSets} />
+            <DatasetList dataSets={dataSets} selectedCountries={selectedCountries} />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CountrySelection from "./components/CountrySelection";
 import BuyOrders from "./routes/BuyOrders";
 import DataSets from "./routes/Datasets";
-import EditBuyOrder from "./routes/BuyOrderDetails";
+import BuyOrderDetails from "./routes/BuyOrderDetails";
 
 function App() {
   const [selectedCountries, updateSelectedCountries] = useState([]);
@@ -11,9 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<BuyOrders />} selectedCountries={selectedCountries} />
-        <Route exact path="/datasets" element={<DataSets />} selectedCountries={selectedCountries} />
-        <Route exact path="/edit" element={<EditBuyOrder />} />
+        <Route exact path="/" element={<BuyOrders selectedCountries={selectedCountries} />} />
+        <Route exact path="/datasets" element={<DataSets selectedCountries={selectedCountries} />} />
+        <Route exact path="/buy-order-details" element={<BuyOrderDetails />} />
       </Routes>
       <CountrySelection selectedCountries={selectedCountries} updateSelectedCountries={updateSelectedCountries} />
     </BrowserRouter>
