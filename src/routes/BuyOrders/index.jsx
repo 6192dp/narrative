@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchRequest } from '../../api';
+import { axiosRequest } from '../../api';
 import Header from '../../components/Header/Header';
 import { BUY_ORDERS_URL } from '../../utils/constants';
 import BuyOrderList from './components/BuyOrderList';
@@ -12,7 +12,7 @@ const BuyOrders = ({ selectedCountries }) => {
     }, []);
 
     const fetchDataSets = async () => {
-        const response = await fetchRequest(BUY_ORDERS_URL);
+        const response = await axiosRequest({ url: BUY_ORDERS_URL, method: 'GET' });
         if (response?.length) {
             updateBuyOrders(response);
         }

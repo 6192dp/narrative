@@ -17,10 +17,10 @@ const DatasetCard = ({ dataSet, counts }) => {
                 <div className="lbl_datasetCard">Available records:</div>
                 <div className="val_datasetCard">{counts[dataSet.id]} records</div>
             </div>
-            <div>
+            {/* <div>
                 <div className="lbl_datasetCard">Included countries:</div>
                 <div className="val_datasetCard">4500 records</div>
-            </div>
+            </div> */}
         </div>
     )
 

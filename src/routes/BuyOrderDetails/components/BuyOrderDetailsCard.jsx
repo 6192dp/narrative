@@ -82,13 +82,13 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, data
                     <br />
                     {isEdit ?
                         <div className='root_buttons'>
-                            <button onClick={handleSaveOrderClick}>Save Order</button>
-                            <button onClick={handleCancelClick}>Cancel</button>
+                            <button onClick={handleSaveOrderClick} className="btn_save">Save Order</button>
+                            <button onClick={handleCancelClick} className="btn_cancel">Cancel</button>
 
                         </div>
                         : <div className='root_buttons'>
-                            <button onClick={handleEditOrderClick}>Edit Order</button>
-                            <button onClick={handleDeleteOrderClick}>Delete Order</button>
+                            <button onClick={handleEditOrderClick} className="btn_edit">Edit Order</button>
+                            <button onClick={handleDeleteOrderClick} className="btn_delete">Delete Order</button>
 
                         </div>
                     }

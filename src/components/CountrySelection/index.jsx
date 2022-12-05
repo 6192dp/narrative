@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { fetchRequest } from "../../api";
+import { axiosRequest } from "../../api";
 import { GET_COUNTRIES_URL } from "../../utils/constants";
 import './styles.css';
 
@@ -11,7 +11,7 @@ const CountrySelection = ({ selectedCountries, updateSelectedCountries, updateCo
     }, []);
 
     const fetchCountries = async () => {
-        const response = await fetchRequest(GET_COUNTRIES_URL);
+        const response = await axiosRequest({ url: GET_COUNTRIES_URL, method: 'GET' });
         if (response?.length) {
             updateCountries(response);
         }

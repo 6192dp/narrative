@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { axiosRequest, fetchRequest } from '../../api';
+import { axiosRequest } from '../../api';
 import Header from '../../components/Header/Header';
 import { BUY_ORDERS_URL, GET_DATASETS_URL } from '../../utils/constants';
 import BuyOrderDetailsCard from './components/BuyOrderDetailsCard';
@@ -20,12 +20,12 @@ const BuyOrderDetails = ({ countries, dataSets, updateDataSets }) => {
     }, []);
 
     const fetchBuyOrderDetails = async () => {
-        const response = await fetchRequest(`${BUY_ORDERS_URL}/${orderId}`);
+        const response = await axiosRequest({ url: `${BUY_ORDERS_URL}/${orderId}`, method: 'GET' });
         updateBuyOrder(response);
     }
 
     const fetchDataSets = async () => {
-        const response = await fetchRequest(GET_DATASETS_URL);
+        const response = await axiosRequest({ url: GET_DATASETS_URL, method: 'GET' });
         if (response?.length) {
             updateDataSets(response);
         }

@@ -74,8 +74,20 @@
 }
 
 .root_buttons button {
+    cursor: pointer;
     width: 6rem;
     margin-left: 0.5rem;
     font-weight: bold;
     padding: 0.4rem 0;
+}
+.btn_edit{
+    background-color: yellow;
+}
+.btn_delete{
+    background-color: red;
+    color: #fff;
+}
+.btn_save{
+    background-color: green;
+    color: #fff;
 }
