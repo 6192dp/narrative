@@ -8,7 +8,7 @@
 
 # Tech stack used
 
-This project was bootstrapped with Create React App
+This project was bootstrapped with Create React App and uses react-router for navigation and axios for HTTP network requests
 
 ## Steps to run the app
 
@@ -24,5 +24,14 @@ This project was bootstrapped with Create React App
 ### `npm start`
 
 Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+
+
+# Project Structure
+
+1. src/index.js is the entry point of the project
+2. App.js has all the possible routes listed
+3. Each route has its own folder in src/routes/ with index.js being its entry point
+4. Each route folder has its own styles.css
+5. A custom axios handler method is available in api.js for HTTP requests
 
