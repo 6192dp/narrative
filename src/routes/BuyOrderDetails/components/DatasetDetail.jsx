@@ -1,5 +1,5 @@
 const DatasetDetail = ({ dataSets, datasetIds, isEdit, updateEditDataSetIds, editDataSetIds }) => {
-    if (datasetIds.length) {
+    if (datasetIds?.length) {
         return datasetIds.map(i => {
 
             const index = dataSets.map(item => item.id).indexOf(i);

@@ -33,7 +33,7 @@ const CountrySelection = ({ selectedCountries, updateSelectedCountries, updateCo
 
     let location = useLocation();
 
-    if (countries?.length && !location.pathname.includes('buyOrderDetails')) {
+    if (countries?.length && !location.pathname.includes('buyOrderDetails') && !location.pathname.includes('createOrder')) {
         return (
             <div className="root_countrySelection">
                 <div className="hdr_countrySelection">Included countries:</div>

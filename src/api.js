@@ -6,7 +6,7 @@ export const axiosRequest = async ({ url, method, data }) => {
         const response = await axios({
             method, url: BASE_API_URL + url, data
         })
-        if (response.status === 200) {
+        if (response.status === 200 || response.status === 201) {
             return response.data;
         } else {
             console.log('Error in API request', response);

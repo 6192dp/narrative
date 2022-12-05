@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { formatDate, getInputValueFromId } from '../../../utils/helpers';
 import '../styles.css'
 import CountryList from './CountryList';
@@ -8,6 +9,8 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, data
     const [isEdit, updateIsEdit] = useState(false);
     const [editDataSetIds, updateEditDataSetIds] = useState([]);
     const [editCountryIds, updateCountryIds] = useState([]);
+
+    const navigate = useNavigate();
 
     const handleEditOrderClick = () => {
         updateIsEdit(true);
@@ -82,12 +85,13 @@ const BuyOrderDetailsCard = ({ buyOrder, countries, handleDeleteOrderClick, data
                     <br />
                     {isEdit ?
                         <div className='root_buttons'>
-                            <button onClick={handleSaveOrderClick} className="btn_save">Save Order</button>
                             <button onClick={handleCancelClick} className="btn_cancel">Cancel</button>
-
+                            <button onClick={handleSaveOrderClick} className="btn_save">Save Order</button>
                         </div>
                         : <div className='root_buttons'>
+
                             <button onClick={handleEditOrderClick} className="btn_edit">Edit Order</button>
+                            <button onClick={() => { navigate('/createOrder') }} className="btn_create">Create Order</button>
                             <button onClick={handleDeleteOrderClick} className="btn_delete">Delete Order</button>
 
                         </div>
